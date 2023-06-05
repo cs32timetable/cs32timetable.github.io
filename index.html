@@ -8,8 +8,18 @@
     <title>Timetable</title>
     <style type="text/css">
 .invisible {
-      visibility: hidden;
-    }
+  visibility: hidden;
+}
+.unselectable {
+ -webkit-user-select: none; /* Safari */
+ -moz-user-select: none; /* Firefox */
+ -ms-user-select: none; /* IE10+/Edge */
+ user-select: none; /* Standard */
+}
+table {
+  margin: 0px;
+}
+
 .winter-is-coming, .snow {
   z-index: 100;
   pointer-events: none;
@@ -110,7 +120,7 @@
         }
     </script>
 </head>
-<body bgcolor="skyblue" onload="startTime()">
+<body bgcolor="skyblue" onload="startTime()" class="unselectable">
     <br>
     <h3 align="center">
         University of Yangon
