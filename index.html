@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -68,7 +69,7 @@ th,td,th{
 .snow--mid {
   -webkit-animation-duration: 20s;
           animation-duration: 20s;
-  background-image: url("https://dl6rt3mwcjzxg.cloudfront.net/assets/snow/snow-medium-0b8a5e0732315b68e1f54185be7a1ad9.png");
+  background-image: url("https://dl6rt3mwcjzxg.cloudfront.net//snow/snow--0b8a5e0732315b68e1f54185be7a1ad9.png");
   background-size: contain;
 }
 .snow--mid + .snow--alt {
@@ -129,28 +130,36 @@ th,td,th{
 <body bgcolor="skyblue" onload="startTime()" class="unselectable">
     <br>
     <h3 align="center">
-        University of Yangon
+        <a href="https://www.uy.edu.mm/" style="text-decoration: none; color: black; font-size: 20px;">University of Yangon</a>
         <br>
         2022-2023 Academic Year Time-Table
     </h3>
     <center>
-      <table class="abc" width="50%" border="0">
+      <table width="50%" class="abc" width="50%">
         <tr class="abc">
-          <th class="abc" align="left" colspan="2">
+          <th id="abcd" class="abc" align="left" colspan="7">
             Third Year, Second Semester
           </th>
+          <th class="abc"></th>
         </tr>
         <tr class="abc">
-          <th class="abc" align="left">
+          <th class="abc" align="left" colspan="7">
             Computer Science Specification
           </th>
           <th class="abc" align="right">
             <div id="clock"></div>
           </th>
         </tr>
+        <tr class="invisible">
+          <th align="center" class="abc">Fri</th>
+          <td align="center" class="abc" colspan="2" title="Computer Aided Software Enginerring">CS<i class="invisible">.</i>-<i class="invisible">.</i>3109</td>
+          <td align="center" class="abc" title="Web-based System Development II">CS<i class="invisible">.</i>-<i class="invisible">.</i>3111</td>
+          <td align="center" class="abc" title="Free Time">Machine</td>
+          <td align="center" class="abc" title="Software Process Management">CS<i class="invisible">.</i>-<i class="invisible">.</i>3108</td>
+          <td align="center" class="abc" title="System Configuration Management">CS<i class="invisible">.</i>-<i class="invisible">.</i>3107</td>
+      </tr>
       </table>
     </center>
-    <br>
     <center>
         <table width="50%" height="250" style="border: 3px solid black;">
             <tr>
@@ -257,5 +266,43 @@ th,td,th{
           }
       }
       </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
